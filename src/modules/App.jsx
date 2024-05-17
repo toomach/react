@@ -1,11 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() => {
+import { useState, useEffect } from 'react';
 
-};                   // function  - це компонент, компонент завжди пишеться з великої літери 
+
+
+
+const App = () => {
+    const [clicks, setClicks] = useState(0);
+
+    useEffect(() => {
+        document.title = 'You clicked ${clicks} times';
+    });
+    
+    return (
+        <button onClick={() => setClicks(clicks + 1)}>
+            You clicked {clicks} times
+    </button>
+)
+};      
  
 
 export default App
